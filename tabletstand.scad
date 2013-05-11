@@ -1,18 +1,26 @@
-// Global Parameters
-w = 120; // Width
-h = 180; // Height
-d = 3;   // Depth
-wd = 2;  // Wire diameter e.g. a wire coathanger
-gap = 1.2; // gap between things that move
-bw = w*0.5;
-bh = h*0.5;
+// Overal dimensions
+w    = 120;   // Width
+h    = 180;   // Height
+d    = 3;     // Depth
+
+// Bracket is the part that drops down and clips into the base
+bw   = w*0.5; // Bracket width
+bh   = h*0.5; // Bracket height
+
+// Tablet
+lip  = 10;    // Overlapping lip that holds the tablet in place
+td   = 6;     // Tablet depth
+
+// Other
+wd   = 2;     // Wire diameter e.g. a wire coathanger
+gap  = 1.2;   // gap between things that move
 
 // Item to print
 // 0 - Demo
 // 1 - Base
 // 2 - Stand
 // 3 - Holder
-item = 0; 
+item = 3; 
 
 use <MCAD/boxes.scad>;
 
@@ -24,7 +32,7 @@ module holder() {
 
         // Things that exist
         union() {
-
+            roundedBox( [w, lip, d], 5, true );
         }
 
         // Things that don't exist
